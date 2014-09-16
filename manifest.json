@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "UWaterloo Food Services",
+  "description": "This extension shows the days menu at Food Service Outlets on Campus.",
+  "version": "1.0",
+
+  "permissions": [
+    "https://api.uwaterloo.ca/v2/",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_icon": "uwlogo.png",
+    "default_popup": "popup.html"
+  }
+}
