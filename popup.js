@@ -21,15 +21,14 @@ $( document ).ready(function() {
   var day = d.getDate();
   var dayOfWeek = d.getDay();
   
+  var count = 0;
   $text = ''; // Text to output to screen
   
   $.getJSON('https://api.uwaterloo.ca/v2/foodservices/' + year + '/' + $weekNumber + '/menu.json?key=b13a3224e1bd4a8a72bfddd903d9e692', function(data){
         for (var i = 0; i < data.data.outlets.length; i++) {
           $outlet = data.data.outlets[i].outlet_name;
           if ($outlet === "Mudie's" || $outlet === "REVelation") {
-          if (i !== 0) {
-            $text += '<hr>';
-          }
+          count += 1;
           $text += '<div>';
           $text += '<h4 style="text-align:center">' + $outlet + '</h4>';
           for (var j = 0; j < data.data.outlets[i].menu.length; j++) {
@@ -54,6 +53,9 @@ $( document ).ready(function() {
                 }
                 $text += '</ul>';
               }
+              if (count == 1) {
+                $text += '<hr>';
+          }
             }
           }
           $text += '</div>';
