@@ -24,7 +24,7 @@ $( document ).ready(function() {
   var count = 0;
   $text = ''; // Text to output to screen
   
-  $.getJSON('https://api.uwaterloo.ca/v2/foodservices/' + year + '/' + $weekNumber + '/menu.json?key=b13a3224e1bd4a8a72bfddd903d9e692', function(data){
+  $.getJSON('https://api.uwaterloo.ca/v2/foodservices/' + year + '/' + $weekNumber + '/menu.json?key={key_val}', function(data){
         for (var i = 0; i < data.data.outlets.length; i++) {
           $outlet = data.data.outlets[i].outlet_name;
           if ($outlet === "Mudie's" || $outlet === "REVelation") {
